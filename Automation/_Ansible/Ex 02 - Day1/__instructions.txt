@@ -227,6 +227,11 @@ nmcli connection up "TunayNaLAN"
 
 =====| Step 7 - Exchange SSH Keys
 
+login: root
+pass: C1sc0123
+ip -4 addr
+
+
 Delete existing SSH Keys
 
 @NetOps
@@ -270,6 +275,7 @@ Make sure pings are SUCCESS
 @NetOps
 
 ansible-playbook run_all.yml
+
 
 
 
