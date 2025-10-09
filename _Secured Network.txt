@@ -1,5 +1,5 @@
 
-Your Monitor Number = #$34T#
+Your Monitor Number = 42
 __________
 **********
 00. Warm up for Day 4
@@ -393,7 +393,7 @@ type cisco_ios_interfaceurl file:////etc/puppetlabs/puppet/devices/rivan.com.con
 
 # Credentials
 
-host: "10.#$34T#.1.4"
+host: "10.42.1.4"
 port: 22
 user: admin
 password: password
@@ -448,7 +448,7 @@ ping rivanit.com
 
 
 Set up your own DNS Server.
- - Create a Zone File for ccna#$34T#.com
+ - Create a Zone File for ccna42.com
    Forward & Reverse
 
  - DNS Records
@@ -474,7 +474,7 @@ Exercise 02: Configure DNS records for devices:
   Ephone2,    e2
 
 
-Configure a webserver for ccna#$34T#.com
+Configure a webserver for ccna42.com
 
 
 
@@ -502,33 +502,33 @@ Install-WindowsFeature -name dns -includeManagementTools
 #########################################################################
 ### Powershell Script for DNS Zones & Records
 
-add-DnsServerPrimaryZone -Name "ccna#$34T#.com" -ZoneFile "ccna#$34T#.com.dns"
+add-DnsServerPrimaryZone -Name "ccna42.com" -ZoneFile "ccna42.com.dns"
 
-﻿add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ns -ipv4address 10.#$34T#.1.7
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name www -hostname ns.ccna#$34T#.com
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name imap -hostname ns.ccna#$34T#.com
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name pop -hostname ns.ccna#$34T#.com
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name smtp -hostname ns.ccna#$34T#.com
+﻿add-DnsServerResourceRecord -zonename ccna42.com -A -name ns -ipv4address 10.42.1.7
+add-DnsServerResourceRecord -zonename ccna42.com -Cname -name www -hostname ns.ccna42.com
+add-DnsServerResourceRecord -zonename ccna42.com -Cname -name imap -hostname ns.ccna42.com
+add-DnsServerResourceRecord -zonename ccna42.com -Cname -name pop -hostname ns.ccna42.com
+add-DnsServerResourceRecord -zonename ccna42.com -Cname -name smtp -hostname ns.ccna42.com
 
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name cb -ipv4address 10.#$34T#.1.4
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ct -ipv4address 10.#$34T#.1.2
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name cm -ipv4address 10.#$34T#.100.8
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ed -ipv4address 10.#$34T#.#$34T#.1
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name e1 -ipv4address 10.#$34T#.100.101
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name e2 -ipv4address 10.#$34T#.100.102
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name c6 -ipv4address 10.#$34T#.50.6
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name c8 -ipv4address 10.#$34T#.50.8
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ap -ipv4address 10.#$34T#.10.3
+add-DnsServerResourceRecord -zonename ccna42.com -A -name cb -ipv4address 10.42.1.4
+add-DnsServerResourceRecord -zonename ccna42.com -A -name ct -ipv4address 10.42.1.2
+add-DnsServerResourceRecord -zonename ccna42.com -A -name cm -ipv4address 10.42.100.8
+add-DnsServerResourceRecord -zonename ccna42.com -A -name ed -ipv4address 10.42.42.1
+add-DnsServerResourceRecord -zonename ccna42.com -A -name e1 -ipv4address 10.42.100.101
+add-DnsServerResourceRecord -zonename ccna42.com -A -name e2 -ipv4address 10.42.100.102
+add-DnsServerResourceRecord -zonename ccna42.com -A -name c6 -ipv4address 10.42.50.6
+add-DnsServerResourceRecord -zonename ccna42.com -A -name c8 -ipv4address 10.42.50.8
+add-DnsServerResourceRecord -zonename ccna42.com -A -name ap -ipv4address 10.42.10.3
 
 
 #########################################################################
 ### Powershell Script for Website configuration
 
-New-Website -name "ccna#$34T#.com" -hostheader "www.ccna#$34T#.com" -physicalpath "d:\webs\officebiz"
+New-Website -name "ccna42.com" -hostheader "www.ccna42.com" -physicalpath "d:\webs\officebiz"
 
 
 
-Exercise 03: Configure DNS and Web for bpiph#$34T#.com
+Exercise 03: Configure DNS and Web for bpiph42.com
 
   - The zone file must contain records for Web, eMail, CUCM,EDGE, ePhone1 and ePhone2.
   - Assign the bpi html as its own main page.
@@ -581,9 +581,9 @@ Verify:
 @Cisco
 conf t
  ip domain lookup
- ip name-server 10.#$34T#.1.10
+ ip name-server 10.42.1.10
  end
-ping ns.ccna#$34T#.com
+ping ns.ccna42.com
 
 
 
@@ -594,13 +594,13 @@ __________
 Upload configurations to FTP Server. (CoreTaas, CoreBaba, CUCM, EDGE)
 
 @Cisco
-copy run ftp://ccna#$34T#.com
+copy run ftp://ccna42.com
 
 
 How to copy the current IOS of a Cisco Switch
 
 @Cisco
-archive upload-sw ftp://ccna#$34T#.com
+archive upload-sw ftp://ccna42.com
 
 
 
@@ -612,7 +612,7 @@ Create an MX record on the Zone file.
 	Install .NET Framework 3.5 Features
 
 
-Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
+Create users and emails for ccna42.com and bpiph42.com
 
   User1: ac
   Pass: C1sc0123
@@ -700,7 +700,7 @@ Segments
 Three way handshake
 Sliding Window
 
-Commands: nmap -v 10.#$34T#.1.10
+Commands: nmap -v 10.42.1.10
 
 Well-known ports 0 - 1023
 Registered ports 1024 - 49151
@@ -781,7 +781,7 @@ conf t
   ip add 10.10.10.11 255.255.255.0
   no shut
  ip route 0.0.0.0 0.0.0.0 208.8.8.2
- ip name-server 8.8.8.8 10.#$34T#.1.10
+ ip name-server 8.8.8.8 10.42.1.10
  ip domain lookup
  end
 wr
@@ -995,7 +995,7 @@ config t
  ip host www.web311.com 192.168.103.11
  end
 
-Review: Create a DNS A record for www.ccna#$34T#.com
+Review: Create a DNS A record for www.ccna42.com
 192.168.103.10 www.web310.com
 192.168.103.11 www.web311.com
   
@@ -1024,7 +1024,7 @@ tcp,udp,icmp,IP     Any      web310/11
 conf t
  service timestamps log datetime
  service timestamps debug datetime
- logging 10.#$34T#.1.10
+ logging 10.42.1.10
  logging trap 5
  end
 wr
@@ -1744,5 +1744,6 @@ conf t
  no ip ssh server algorithm authentication password
  no ip ssh server algorithm authentication keyboard
  end
+
 
 
